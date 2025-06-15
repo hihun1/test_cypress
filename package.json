@@ -3,12 +3,17 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "cy:open": "cypress open",
+    "cy:run": "cypress run",
+    "test:addToCart": "cypress run --spec 'cypress/e2e/tests/addToCartTest.cy.js'",
+    "test:report": "cypress run --reporter cypress-mochawesome-reporter",
+    "test": "cypress run"
   },
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "cypress": "^14.4.1"
+    "cypress": "^14.4.1",
+    "cypress-mochawesome-reporter": "^3.8.2"
   }
 }
