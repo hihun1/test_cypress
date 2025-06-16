@@ -1,0 +1,11 @@
+name: Regression End-to-end tests
+on: push
+jobs:
+  cypress-run:
+    runs-on: windows-latest  # ✅ Chạy trên Windows thay vì Ubuntu
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Cypress run
+        uses: cypress-io/github-action@v5
