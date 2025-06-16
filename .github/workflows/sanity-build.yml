@@ -2,7 +2,7 @@ name: Sanity Build
 on: push
 jobs:
   cypress-run:
-    runs-on: windows-latest  # Run on Windows instead of Ubuntu
+    runs-on: ubuntu-22.04
     steps:
       - name: Checkout
         uses: actions/checkout@v3
