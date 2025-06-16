@@ -2,7 +2,7 @@ name: Parallel  Test Build
 on: push
 jobs:
   Add-To-Cart-run:
-    runs-on: windows-latest  # Run on Windows instead of Ubuntu
+    runs-on: windows-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v3
