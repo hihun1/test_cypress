@@ -2,10 +2,22 @@ name: Regression End-to-end tests
 on: push
 jobs:
   cypress-run:
-    runs-on: windows-latest  # ✅ Chạy trên Windows thay vì Ubuntu
+    runs-on: windows-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+        
+      # Install npm dependencies, cache them correctly
+      # and run all Cypress tests
 
       - name: Cypress run
         uses: cypress-io/github-action@v5
+        with:
+         command: npm run test:addToCart    
+
+      - name: Cypress Test Report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: Mochawesome HTML Report
+          path: cypress/reports/html  
